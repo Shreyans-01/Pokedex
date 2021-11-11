@@ -54,6 +54,15 @@ flutter:
     - assets/images/pokemonTypeSymbols/fireType.png
     - assets/images/pokemonTypeSymbols/plantType.png
     - assets/images/pokemonTypeSymbols/waterType.png
+    - assets/images/GenerationPrototype/Gen1.png
+    - assets/images/GenerationPrototype/Gen2.png
+    - assets/images/GenerationPrototype/Gen3.png
+    - assets/images/GenerationPrototype/Gen4.png
+    - assets/images/GenerationPrototype/Gen5.png
+    - assets/images/GenerationPrototype/Gen6.png
+    - assets/images/GenerationPrototype/Gen7.png
+    - assets/images/GenerationPrototype/Gen8.png
+    - assets/images/background.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
