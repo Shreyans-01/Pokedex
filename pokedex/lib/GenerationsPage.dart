@@ -19,6 +19,20 @@ class _GenerationPageState extends State<GenerationPage> {
     SystemChrome.setEnabledSystemUIOverlays([]);
 
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar (
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        centerTitle: true,
+        title: Text(
+          "Generations",
+          style: TextStyle(
+            fontFamily: "Pokemon GB",
+            fontSize: 20.0,
+            color: Colors.white,
+          ),
+        ),
+      ),
       body: Container(
         // background
         decoration: BoxDecoration (
@@ -31,14 +45,14 @@ class _GenerationPageState extends State<GenerationPage> {
         child: Center(
           child: ListView(
             children: [
-              _tile("assets/images/GenerationPrototype/Gen1.png", "Generation 1", 0),
-              _tile("assets/images/GenerationPrototype/Gen2.png", "Generation 2", 1),
-              _tile("assets/images/GenerationPrototype/Gen3.png", "Generation 3", 2),
-              _tile("assets/images/GenerationPrototype/Gen4.png", "Generation 4", 3),
-              _tile("assets/images/GenerationPrototype/Gen5.png", "Generation 5", 4),
-              _tile("assets/images/GenerationPrototype/Gen6.png", "Generation 6", 5),
-              _tile("assets/images/GenerationPrototype/Gen7.png", "Generation 7", 6),
-              _tile("assets/images/GenerationPrototype/Gen8.png", "Generation 8", 7),
+              _tile("assets/images/GenerationPrototype/Gen1.png", "Generation I", 0),
+              _tile("assets/images/GenerationPrototype/Gen2.png", "Generation II", 1),
+              _tile("assets/images/GenerationPrototype/Gen3.png", "Generation III", 2),
+              _tile("assets/images/GenerationPrototype/Gen4.png", "Generation IV", 3),
+              _tile("assets/images/GenerationPrototype/Gen5.png", "Generation V", 4),
+              _tile("assets/images/GenerationPrototype/Gen6.png", "Generation VI", 5),
+              _tile("assets/images/GenerationPrototype/Gen7.png", "Generation VII", 6),
+              _tile("assets/images/GenerationPrototype/Gen8.png", "Generation VIII", 7),
             ],
           )
         ),
@@ -70,7 +84,7 @@ Container _tile(String imageURL, String text, int index) {
         color: colors[colorIndex],
       ),
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(20.0, 0.0, 20.0, 0.0),
+        padding: const EdgeInsets.fromLTRB(15.0, 0.0, 15.0, 0.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -81,7 +95,10 @@ Container _tile(String imageURL, String text, int index) {
             ),
             Text(
               text,
-              style: TextStyle(fontFamily: "Pokemon GB"),
+              style: TextStyle(
+                fontFamily: "Pokemon GB",
+                fontSize: 11.5
+              ),
             )
           ],
         ),

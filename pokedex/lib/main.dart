@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'PokemonFamily.dart';
 import 'StartupPage.dart';
-import 'Menu.dart';
-import 'GenerationsPage.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,7 +19,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: HexColor("#909090"),
       ),
       // home: MyHomePage(title: 'Flutter Demo Home Page'),
-      home: Menu(),
+      home: PokemonFamily(),
     );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import "package:flutter/material.dart";
 import 'package:flutter/services.dart';
+import 'package:pokedex/GenerationsPage.dart';
 
 class Menu extends StatefulWidget {
   const Menu({Key? key}) : super(key: key);
@@ -35,30 +36,36 @@ class _MenuState extends State<Menu> {
                   child: Image(image: AssetImage ("assets/images/Pokédex_logo (1).png")),
                 ),
                 // Generations Button
-                Container(
-                  margin: EdgeInsets.fromLTRB(15.0, 5.0, 15.0, 5.0),
-                  decoration: BoxDecoration (
-                    borderRadius: BorderRadius.circular (5.0),
-                    color: Colors.greenAccent,
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(25.0),
-                    child: Row (
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image(
-                          image: AssetImage ("assets/images/pokemonGenerations.png"),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.fromLTRB(20.0, 0.0, 0.0, 0.0),
-                          child: Text(
-                            "Generations",
-                            style: TextStyle (fontFamily: "Pokemon GB"),
-                          ),
-                        )
-                      ],
+                InkWell(
+                  onTap: () {
+                  //  Navigator thingy
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => GenerationPage()));
+                  },
+                  child: Container(
+                    margin: EdgeInsets.fromLTRB(15.0, 5.0, 15.0, 5.0),
+                    decoration: BoxDecoration (
+                      borderRadius: BorderRadius.circular (5.0),
+                      color: Colors.greenAccent,
                     ),
-                  )
+                    child: Padding(
+                      padding: const EdgeInsets.all(25.0),
+                      child: Row (
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image(
+                            image: AssetImage ("assets/images/pokemonGenerations.png"),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(20.0, 0.0, 0.0, 0.0),
+                            child: Text(
+                              "Generations",
+                              style: TextStyle (fontFamily: "Pokemon GB"),
+                            ),
+                          )
+                        ],
+                      ),
+                    )
+                  ),
                 ),
                 // Evolutions, Items and Pokemon types Buttons
                 Container(

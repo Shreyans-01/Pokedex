@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:pokedex/Menu.dart';
 
 class PokemonFamily extends StatefulWidget {
   const PokemonFamily({Key? key}) : super(key: key);
@@ -37,19 +38,24 @@ class _PokemonFamilyState extends State<PokemonFamily> {
             fit: BoxFit.cover
           )
         ),
-        child: Center (
-          child: Column (
-            children: [
-              Padding(
-                padding: EdgeInsets.fromLTRB(0, logoTopPad, 0, logoBotPad),
-                child: Image(image: AssetImage ("assets/images/Pokédex_logo (1).png")),
-              ),
-              Image(
-                image: AssetImage ("assets/images/pokeball.png"),
-                height: 70,
-                width: 70,
-              ),
-            ],
+        child: InkWell(
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => Menu()));
+          },
+          child: Center (
+            child: Column (
+              children: [
+                Padding(
+                  padding: EdgeInsets.fromLTRB(0, logoTopPad, 0, logoBotPad),
+                  child: Image(image: AssetImage ("assets/images/Pokédex_logo (1).png")),
+                ),
+                Image(
+                  image: AssetImage ("assets/images/pokeball.png"),
+                  height: 70,
+                  width: 70,
+                ),
+              ],
+            ),
           ),
         ),
       ),
