@@ -2,9 +2,11 @@ import 'package:flutter/cupertino.dart';
 import "package:flutter/material.dart";
 import 'package:flutter/services.dart';
 import 'package:pokedex/GenerationsPage.dart';
+import 'package:pokedex/GenerationList.dart';
+
 
 class Menu extends StatefulWidget {
-  const Menu({Key? key}) : super(key: key);
+  const Menu({Key key}) : super(key: key);
 
   @override
   _MenuState createState() => _MenuState();
@@ -39,7 +41,7 @@ class _MenuState extends State<Menu> {
                 InkWell(
                   onTap: () {
                   //  Navigator thingy
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => GenerationPage()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => GenerationList()));
                   },
                   child: Container(
                     margin: EdgeInsets.fromLTRB(15.0, 5.0, 15.0, 5.0),

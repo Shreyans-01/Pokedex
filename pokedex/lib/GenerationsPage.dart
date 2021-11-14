@@ -3,11 +3,12 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:pokedex/GenerationList.dart';
 
 const colors = [Colors.amberAccent, Colors.greenAccent, Colors.cyanAccent, Colors.lightBlueAccent, Colors.orangeAccent, Colors.deepOrangeAccent];
 
 class GenerationPage extends StatefulWidget {
-  const GenerationPage({Key? key}) : super(key: key);
+  const GenerationPage({Key key}) : super(key: key);
 
   @override
   _GenerationPageState createState() => _GenerationPageState();
