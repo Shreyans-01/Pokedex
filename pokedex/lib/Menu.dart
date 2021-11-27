@@ -6,7 +6,7 @@ import 'package:pokedex/GenerationList.dart';
 
 
 class Menu extends StatefulWidget {
-  const Menu({Key key}) : super(key: key);
+  const Menu({Key? key}) : super(key: key);
 
   @override
   _MenuState createState() => _MenuState();

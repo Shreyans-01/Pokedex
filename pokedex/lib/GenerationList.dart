@@ -1,10 +1,12 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pokedex/poke_fetch.dart';
 import 'package:http/http.dart' as http;
 import 'package:pokedex/poke_fetch.dart';
-import 'package:pokedex/pokemondetail.dart';
+import 'package:pokedex/pokedetail.dart';
 
 class GenerationList extends StatefulWidget {
   const GenerationList({Key? key}) : super(key: key);
@@ -14,8 +16,9 @@ class GenerationList extends StatefulWidget {
 }
 
 class _GenerationListState extends State<GenerationList> {
-  var url = "https://raw.githubusercontent.com/DetainedDeveloper/Pokedex/master/pokedex_raw/pokedex_raw_array.json";
-  PokeData pokeHub;
+  var url = Uri.parse("https://raw.githubusercontent.com/DetainedDeveloper/Pokedex/master/pokedex_raw/pokedex_raw_array.json");
+  PokeHub pokeHub = PokeHub();
+  PokeHub pokeHub = PokeHub();
   @override
     void initState(){
       super.initState();
@@ -42,8 +45,8 @@ class _GenerationListState extends State<GenerationList> {
       )
           : GridView.count(
         crossAxisCount: 2,
-        children: pokeHub.pokemon
-            .map((poke) => Padding(
+        children: if(pokeHub.pokemon!=null){
+          pokeHub.pokemon.map((poke) => Padding(
           padding: const EdgeInsets.all(2.0),
           child: InkWell(
             onTap: () {
@@ -52,7 +55,9 @@ class _GenerationListState extends State<GenerationList> {
                   MaterialPageRoute(
                       builder: (context) => PokeDetail(
                         pokemon: poke,
-                      )));
+                      )
+                      )
+                      );
             },
             child: Hero(
               tag: poke.img,
@@ -84,7 +89,7 @@ class _GenerationListState extends State<GenerationList> {
               ),
             ),
           ),
-        ))
+        ))}
             .toList(),
       ),
       drawer: Drawer(),

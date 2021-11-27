@@ -1,10 +1,10 @@
-import 'package:flutter_web/material.dart';
+import 'package:flutter/material.dart';
 import 'package:pokedex/poke_fetch.dart';
 
 class PokeDetail extends StatelessWidget {
   final Pokemon pokemon;
 
-  PokeDetail({this.pokemon});
+  PokeDetail({required this.pokemon});
 
   bodyWidget(BuildContext context) => Stack(
     children: <Widget>[

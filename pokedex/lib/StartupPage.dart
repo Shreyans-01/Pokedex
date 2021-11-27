@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class StartUpPage extends StatefulWidget {
-  const StartUpPage({Key key}) : super(key: key);
+  const StartUpPage({Key? key}) : super(key: key);
 
   @override
   _StartUpPageState createState() => _StartUpPageState();

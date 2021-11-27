@@ -4,7 +4,7 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:pokedex/Menu.dart';
 
 class PokemonFamily extends StatefulWidget {
-  const PokemonFamily({Key key}) : super(key: key);
+  const PokemonFamily({Key? key}) : super(key: key);
 
   @override
   _PokemonFamilyState createState() => _PokemonFamilyState();
