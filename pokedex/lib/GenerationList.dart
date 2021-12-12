@@ -61,9 +61,10 @@ class _GenerationListState extends State<GenerationList> {
                 alignment: Alignment.bottomCenter
             )
         ),
+        // If JSON loaded - render Pokemons
         child:  _pokeHub.pokemon != null ? GridView.count(
           crossAxisCount: 2,
-          children: _pokeHub.pokemon!.map((poke) => Padding(
+          children: _pokeHub.pokemon!.map((poke) => (Padding(
             padding: const EdgeInsets.all(10.0),
             child: InkWell(
               onTap: () {
@@ -73,8 +74,8 @@ class _GenerationListState extends State<GenerationList> {
                         builder: (context) => PokeDetail(
                           pokemon: poke,
                         )
-                        )
-                        );
+                    )
+                );
               },
               child: Hero(
                 tag: poke.img,
@@ -111,8 +112,9 @@ class _GenerationListState extends State<GenerationList> {
               ),
             ),
           ))
-              .toList(),
+          ).toList()
         )
+        // If JSON loading - loading screen
         : Center(
           child: Text (
             "Loading...",

@@ -96,12 +96,12 @@ class PokeDetail extends StatelessWidget {
                     style: TextStyle(fontWeight: FontWeight.bold, fontFamily: "Pokemon GB")),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: pokemon.nextEvolution == null
+                  children: pokemon.nextEvolution.length == 0
                       ? <Widget>[Text(
                     "This is the final form",
                     style: TextStyle(
                       fontFamily: "Pokemon GB",
-                        fontSize: 9
+                        fontSize: 12
                     )
                   )]
                       : pokemon.nextEvolution
@@ -147,6 +147,7 @@ class PokeDetail extends StatelessWidget {
       // extendBodyBehindAppBar: true,
       appBar: AppBar(
         elevation: 0.0,
+        centerTitle: true,
         title: Text(
             pokemon.name,
           style: TextStyle (
