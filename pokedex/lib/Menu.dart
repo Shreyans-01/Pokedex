@@ -3,6 +3,7 @@ import "package:flutter/material.dart";
 import 'package:flutter/services.dart';
 import 'package:pokedex/GenerationsPage.dart';
 import 'package:pokedex/GenerationList.dart';
+import 'package:pokedex/PokemonTypes.dart';
 
 
 class Menu extends StatefulWidget {
@@ -115,7 +116,12 @@ class _MenuState extends State<Menu> {
                           )
                         ],
                       ),
-                      Container(
+            InkWell(
+              onTap: () {
+                //  Navigator thingy
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Types()));
+              },
+                      child: Container(
                       //  pokemon type buttons
                       //   constraints: BoxConstraints (minWidth: 160),
                         decoration: BoxDecoration (
@@ -153,7 +159,8 @@ class _MenuState extends State<Menu> {
                             ],
                           ),
                         ),
-                      )
+                      ),
+            ),
                     ],
                   ),
                 ),

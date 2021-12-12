@@ -64,8 +64,26 @@ flutter:
     - assets/images/GenerationPrototype/Gen7.png
     - assets/images/GenerationPrototype/Gen8.png
     - assets/images/background.png
+    - assets/images/types/0.png
+    - assets/images/types/1.png
+    - assets/images/types/2.png
+    - assets/images/types/3.png
+    - assets/images/types/4.png
+    - assets/images/types/5.png
+    - assets/images/types/6.png
+    - assets/images/types/7.png
+    - assets/images/types/8.png
+    - assets/images/types/9.png
+    - assets/images/types/10.png
+    - assets/images/types/11.png
+    - assets/images/types/12.png
+    - assets/images/types/13.png
+    - assets/images/types/14.png
+    - assets/images/types/15.png
+    - assets/images/types/16.png
+    - assets/images/types/17.png
 
-  # An image asset can refer to one or more resolution-specific "variants", see
+      # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
   # For details regarding adding assets from package dependencies, see

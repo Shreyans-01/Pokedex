@@ -45,7 +45,7 @@ class _GenerationListState extends State<GenerationList> {
         elevation: 0,
         centerTitle: true,
         title: Text(
-          "Generations",
+          "Pokemons",
           style: TextStyle(
             fontFamily: "Pokemon GB",
             fontSize: 20.0,
