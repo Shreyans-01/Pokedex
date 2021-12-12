@@ -16,7 +16,7 @@ class GenerationList extends StatefulWidget {
 
 class _GenerationListState extends State<GenerationList> {
   var url = Uri.parse("https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json");
-  PokeHub pokeHub = PokeHub();
+  PokeHub _pokeHub = PokeHub();
 
   @override
     void initState(){
@@ -27,9 +27,11 @@ class _GenerationListState extends State<GenerationList> {
   fetchData() async {
     var res = await http.get(url);
     var decodedJson = jsonDecode(res.body);
-    pokeHub = PokeHub.fromJson(decodedJson);
-    print(pokeHub.toJson());
-    setState(() {});
+    setState(() {
+      _pokeHub = PokeHub.fromJson(decodedJson);
+    });
+    // print(_pokeHub.toJson());
+    // setState(() {});
   }
   @override
   Widget build(BuildContext context) {
@@ -38,14 +40,9 @@ class _GenerationListState extends State<GenerationList> {
         // title: Text("Poke App"),
         backgroundColor: Colors.transparent,
       ),
-      body: pokeHub != null
-          ? Center(
-        child: CircularProgressIndicator(),
-      )
-          : GridView.count(
+      body: GridView.count(
         crossAxisCount: 2,
-        children: pokeHub.pokemon!
-         .map((poke) => Padding(
+        children: _pokeHub.pokemon!.map((poke) => Padding(
           padding: const EdgeInsets.all(2.0),
           child: InkWell(
             onTap: () {
@@ -68,9 +65,9 @@ class _GenerationListState extends State<GenerationList> {
                   children: <Widget>[
                     Container(
                       height: MediaQuery.of(context).size.height *
-                          0.4,
+                          0.15,
                       width:
-                      MediaQuery.of(context).size.width * 0.2,
+                      MediaQuery.of(context).size.width * 0.3,
                       decoration: BoxDecoration(
                           image: DecorationImage(
                               fit: BoxFit.cover,
