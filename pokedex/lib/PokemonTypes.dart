@@ -37,7 +37,6 @@ class _TypesState extends State<Types> {
             child: Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
-
                   image: AssetImage (s),
                 ),
                 borderRadius:
