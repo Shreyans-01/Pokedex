@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pokedex/poke_fetch.dart';
 import 'package:http/http.dart' as http;
-import 'package:pokedex/poke_fetch.dart';
 import 'package:pokedex/pokedetail.dart';
 
 class GenerationList extends StatefulWidget {
@@ -16,9 +15,9 @@ class GenerationList extends StatefulWidget {
 }
 
 class _GenerationListState extends State<GenerationList> {
-  var url = Uri.parse("https://raw.githubusercontent.com/DetainedDeveloper/Pokedex/master/pokedex_raw/pokedex_raw_array.json");
+  var url = Uri.parse("https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json");
   PokeHub pokeHub = PokeHub();
-  PokeHub pokeHub = PokeHub();
+
   @override
     void initState(){
       super.initState();
@@ -39,14 +38,14 @@ class _GenerationListState extends State<GenerationList> {
         // title: Text("Poke App"),
         backgroundColor: Colors.transparent,
       ),
-      body: pokeHub == null
+      body: pokeHub != null
           ? Center(
         child: CircularProgressIndicator(),
       )
           : GridView.count(
         crossAxisCount: 2,
-        children: if(pokeHub.pokemon!=null){
-          pokeHub.pokemon.map((poke) => Padding(
+        children: pokeHub.pokemon!
+         .map((poke) => Padding(
           padding: const EdgeInsets.all(2.0),
           child: InkWell(
             onTap: () {
@@ -89,7 +88,7 @@ class _GenerationListState extends State<GenerationList> {
               ),
             ),
           ),
-        ))}
+        ))
             .toList(),
       ),
       drawer: Drawer(),

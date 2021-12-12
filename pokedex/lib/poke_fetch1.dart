@@ -1,5 +1,5 @@
 class PokeHub {
-  List<Pokemon>? pokemon= [] ;
+  List<Pokemon>? pokemon = [];
 
   PokeHub({this.pokemon});
 
@@ -26,17 +26,17 @@ class Pokemon {
   String num="";
   String name="";
   String img="";
-  List<dynamic> type=[];
+  List<String> type=[];
   String height="";
   String weight="";
   String candy="";
-  // int candyCount=0;
+  int candyCount=0;
   String egg="";
-  double spawnChance=0.0;
-  double avgSpawns=0.0;
+  String spawnChance="";
+  String avgSpawns="";
   String spawnTime="";
-  List<dynamic> multipliers=[];
-  List<dynamic> weaknesses=[];
+  List<double> multipliers=[];
+  List<String> weaknesses=[];
   List<NextEvolution> nextEvolution = [];
 
   Pokemon(
@@ -48,39 +48,37 @@ class Pokemon {
         required this.height,
         required this.weight,
         required this.candy,
-        // required this.candyCount,
+        required this.candyCount,
         required this.egg,
         required this.spawnChance,
         required this.avgSpawns,
         required this.spawnTime,
-        // required this.multipliers,
+        required this.multipliers,
         required this.weaknesses,
         required this.nextEvolution});
 
   Pokemon.fromJson(Map<String, dynamic> json) {
-    print(json['avg_spawns'].runtimeType);
     id = json['id'];
     num = json['num'];
     name = json['name'];
     img = json['img'];
-    type = json['type'];
+    type = json['type'].cast<String>();
     height = json['height'];
     weight = json['weight'];
     candy = json['candy'];
-    // candyCount = json['candy_count'];
+    candyCount = json['candy_count'];
     egg = json['egg'];
-    spawnChance = json['spawn_chance'].toDouble();
-    avgSpawns = json['avg_spawns'].toDouble();
+    spawnChance = json['spawn_chance'].toString();
+    avgSpawns = json['avg_spawns'].toString();
     spawnTime = json['spawn_time'];
-    multipliers = (json['multipliers'] != null)? json['multipliers']: [];
-    weaknesses = (json['weaknesses'] != null)? json['weaknesses']: [];
+    multipliers = json['multipliers']?.cast<double>();
+    weaknesses = json['weaknesses'].cast<String>();
     if (json['next_evolution'] != null) {
       nextEvolution = new List<NextEvolution>.empty(growable: true);
       json['next_evolution'].forEach((v) {
         nextEvolution.add(new NextEvolution.fromJson(v));
       });
     }
-
   }
 
   Map<String, dynamic> toJson() {
@@ -93,17 +91,15 @@ class Pokemon {
     data['height'] = this.height;
     data['weight'] = this.weight;
     data['candy'] = this.candy;
-    // data['candy_count'] = this.candyCount;
+    data['candy_count'] = this.candyCount;
     data['egg'] = this.egg;
     data['spawn_chance'] = this.spawnChance;
     data['avg_spawns'] = this.avgSpawns;
     data['spawn_time'] = this.spawnTime;
     data['multipliers'] = this.multipliers;
     data['weaknesses'] = this.weaknesses;
-    if (this.nextEvolution != null) {
-      data['next_evolution'] =
-          this.nextEvolution.map((v) => v.toJson()).toList();
-    }
+    data['next_evolution'] =
+        this.nextEvolution.map((v) => v.toJson()).toList();
     return data;
   }
 }
