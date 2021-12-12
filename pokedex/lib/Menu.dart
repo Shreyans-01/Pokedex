@@ -60,7 +60,7 @@ class _MenuState extends State<Menu> {
                           Padding(
                             padding: EdgeInsets.fromLTRB(20.0, 0.0, 0.0, 0.0),
                             child: Text(
-                              "Generations",
+                              "Pokemon List",
                               style: TextStyle (fontFamily: "Pokemon GB"),
                             ),
                           )
