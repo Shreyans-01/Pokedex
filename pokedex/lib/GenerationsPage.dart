@@ -26,7 +26,7 @@ class _GenerationPageState extends State<GenerationPage> {
         elevation: 0,
         centerTitle: true,
         title: Text(
-          "Generations",
+          "Pokemon List",
           style: TextStyle(
             fontFamily: "Pokemon GB",
             fontSize: 20.0,
