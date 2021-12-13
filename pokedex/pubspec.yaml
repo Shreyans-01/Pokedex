@@ -82,6 +82,10 @@ flutter:
     - assets/images/types/15.png
     - assets/images/types/16.png
     - assets/images/types/17.png
+    - assets/images/items/berries/
+    - assets/images/items/hold-items/
+    - assets/images/items/pokeballs/
+    - assets/images/Legendary/
 
       # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

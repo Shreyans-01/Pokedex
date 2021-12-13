@@ -3,6 +3,8 @@ import "package:flutter/material.dart";
 import 'package:flutter/services.dart';
 import 'package:pokedex/GenerationsPage.dart';
 import 'package:pokedex/GenerationList.dart';
+import 'package:pokedex/ItemsList.dart';
+import 'package:pokedex/LegendaryList.dart';
 import 'package:pokedex/PokemonTypes.dart';
 
 
@@ -96,20 +98,29 @@ class _MenuState extends State<Menu> {
                               ),
                             ),
                           ),
-                          Container(
-                          //  Items
-                            margin: EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 15.0),
-                            constraints: BoxConstraints(minWidth: 210),
-                            decoration: BoxDecoration (
-                              borderRadius: BorderRadius.circular (5.0),
-                              color: Colors.lightBlueAccent,
-                            ),
-                            child: Padding(
-                              padding: EdgeInsets.all(17.5),
-                              child: Center(
-                                child: Text(
-                                  "Items",
-                                  style: TextStyle (fontFamily: "Pokemon GB", fontSize: 12.5),
+                          InkWell(
+                            onTap: () {
+                              //  Navigator thingy
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => ItemsList())
+                              );
+                            },
+                            child: Container(
+                            //  Items
+                              margin: EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 15.0),
+                              constraints: BoxConstraints(minWidth: 210),
+                              decoration: BoxDecoration (
+                                borderRadius: BorderRadius.circular (5.0),
+                                color: Colors.lightBlueAccent,
+                              ),
+                              child: Padding(
+                                padding: EdgeInsets.all(17.5),
+                                child: Center(
+                                  child: Text(
+                                    "Items",
+                                    style: TextStyle (fontFamily: "Pokemon GB", fontSize: 12.5),
+                                  ),
                                 ),
                               ),
                             ),
@@ -191,30 +202,36 @@ class _MenuState extends State<Menu> {
                     )
                 ),
                 // Legendary Pokemon Button
-                Container(
-                    margin: EdgeInsets.fromLTRB(15.0, 10.0, 15.0, 5.0),
-                    decoration: BoxDecoration (
-                      borderRadius: BorderRadius.circular (5.0),
-                      color: Colors.cyanAccent,
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(30.0, 25.0, 30.0, 25.0),
-                      child: Row (
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Expanded(
-                            child: Padding(
-                              padding: EdgeInsets.fromLTRB(20.0, 0.0, 0.0, 0.0),
-                              child: Text(
-                                "Legendary Pokemon",
-                                textAlign: TextAlign.right,
-                                style: TextStyle (fontFamily: "Pokemon GB"),
-                              ),
-                            ),
-                          )
-                        ],
+                InkWell(
+                  onTap: () {
+                    //  Navigator thingy
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => LegendaryList()));
+                  },
+                  child: Container(
+                      margin: EdgeInsets.fromLTRB(15.0, 10.0, 15.0, 5.0),
+                      decoration: BoxDecoration (
+                        borderRadius: BorderRadius.circular (5.0),
+                        color: Colors.cyanAccent,
                       ),
-                    )
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(30.0, 25.0, 30.0, 25.0),
+                        child: Row (
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Expanded(
+                              child: Padding(
+                                padding: EdgeInsets.fromLTRB(20.0, 0.0, 0.0, 0.0),
+                                child: Text(
+                                  "Legendary Pokemon",
+                                  textAlign: TextAlign.right,
+                                  style: TextStyle (fontFamily: "Pokemon GB"),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      )
+                  ),
                 ),
                 // Space at the bottom
                 Padding(padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0))
