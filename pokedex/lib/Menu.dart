@@ -55,16 +55,16 @@ class _MenuState extends State<Menu> {
                     child: Padding(
                       padding: const EdgeInsets.all(25.0),
                       child: Row (
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Image(
                             image: AssetImage ("assets/images/pokemonGenerations.png"),
                           ),
-                          Padding(
-                            padding: EdgeInsets.fromLTRB(20.0, 0.0, 0.0, 0.0),
-                            child: Text(
-                              "Pokemon List",
-                              style: TextStyle (fontFamily: "Pokemon GB"),
+                          Text(
+                            "Pokemon List",
+                            textAlign: TextAlign.right,
+                            style: TextStyle (
+                              fontFamily: "Pokemon GB",
                             ),
                           )
                         ],
