@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import "package:flutter/material.dart";
 import 'package:flutter/services.dart';
-import 'package:pokedex/GenerationsPage.dart';
+import 'package:pokedex/EvolutionsPage.dart';
 import 'package:pokedex/GenerationList.dart';
 import 'package:pokedex/ItemsList.dart';
 import 'package:pokedex/LegendaryList.dart';
@@ -80,20 +80,29 @@ class _MenuState extends State<Menu> {
                     children: [
                       Column(
                         children: [
-                          Container(
-                          //  Evolutions
-                            margin: EdgeInsets.fromLTRB(5.0, 15.0, 5.0, 5.0),
-                            constraints: BoxConstraints(minWidth: 210),
-                            decoration: BoxDecoration (
-                              borderRadius: BorderRadius.circular (5.0),
-                              color: Colors.lightBlueAccent,
-                            ),
-                            child: Padding(
-                              padding: EdgeInsets.fromLTRB(12.0, 17.5, 12.0, 17.5),
-                              child: Center(
-                                child: Text(
-                                  "Evolutions",
-                                  style: TextStyle (fontFamily: "Pokemon GB", fontSize: 12.5),
+                          InkWell(
+                            onTap: () {
+                              //  Navigator thingy
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => EvolutionPage())
+                              );
+                            },
+                            child: Container(
+                            //  Evolutions
+                              margin: EdgeInsets.fromLTRB(5.0, 15.0, 5.0, 5.0),
+                              constraints: BoxConstraints(minWidth: 210),
+                              decoration: BoxDecoration (
+                                borderRadius: BorderRadius.circular (5.0),
+                                color: Colors.lightBlueAccent,
+                              ),
+                              child: Padding(
+                                padding: EdgeInsets.fromLTRB(12.0, 17.5, 12.0, 17.5),
+                                child: Center(
+                                  child: Text(
+                                    "Evolutions",
+                                    style: TextStyle (fontFamily: "Pokemon GB", fontSize: 12.5),
+                                  ),
                                 ),
                               ),
                             ),

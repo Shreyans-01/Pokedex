@@ -7,14 +7,14 @@ import 'package:pokedex/GenerationList.dart';
 
 const colors = [Colors.amberAccent, Colors.greenAccent, Colors.cyanAccent, Colors.lightBlueAccent, Colors.orangeAccent, Colors.deepOrangeAccent];
 
-class GenerationPage extends StatefulWidget {
-  const GenerationPage({Key? key}) : super(key: key);
+class EvolutionPage extends StatefulWidget {
+  const EvolutionPage({Key? key}) : super(key: key);
 
   @override
-  _GenerationPageState createState() => _GenerationPageState();
+  _EvolutionPageState createState() => _EvolutionPageState();
 }
 
-class _GenerationPageState extends State<GenerationPage> {
+class _EvolutionPageState extends State<EvolutionPage> {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setEnabledSystemUIOverlays([]);
@@ -26,7 +26,7 @@ class _GenerationPageState extends State<GenerationPage> {
         elevation: 0,
         centerTitle: true,
         title: Text(
-          "Pokemon List",
+          "Evolutions",
           style: TextStyle(
             fontFamily: "Pokemon GB",
             fontSize: 20.0,

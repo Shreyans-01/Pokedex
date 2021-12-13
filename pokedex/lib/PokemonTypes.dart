@@ -16,6 +16,20 @@ class _TypesState extends State<Types> {
     SystemChrome.setEnabledSystemUIOverlays([]);
 
     return Scaffold(
+        extendBodyBehindAppBar: true,
+        appBar: AppBar (
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          centerTitle: true,
+          title: Text(
+            "Pokemon List",
+            style: TextStyle(
+              fontFamily: "Pokemon GB",
+              fontSize: 20.0,
+              color: Colors.white,
+            ),
+          ),
+        ),
       body: Container(
         // background
         decoration: BoxDecoration (
